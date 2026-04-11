@@ -4,18 +4,20 @@
 Hệ thống nhận diện ngôn ngữ ký hiệu tay theo thời gian thực sử dụng **MediaPipe Tasks** và **Machine Learning**
 Ứng dụng sử dụng camera để phát hiện bàn tay và dự đoán ký tự tương ứng trong bảng chữ cái (không bao gồm ký tự J và Z)
 
----
 
-### Demo
+## Demo
 
-![Demo](demo/demo.gif)
-![Demo](demo/demo2.gif)
+<p align="center">
+  <img src="demo/demo.gif" width="400">
+</p>
+<p align="center">
+  <img src="demo/demo2.gif" width="400">
+</p>
 
 [Xem video full] (demo/...)
 
----
 
-### Tính năng (Features)
+## Tính năng (Features)
 
 - Phát hiện bàn tay theo thời gian thực bằng MediaPipe Tasks, trích xuất đặc trung từ 21 điểm trên bàn tay
 - Huấn luyện các mô hình học máy:
@@ -25,9 +27,8 @@ Hệ thống nhận diện ngôn ngữ ký hiệu tay theo thời gian thực s�
 - Nhận diện các ký tự bảng chữ cái trực tiếp từ webcam
 - Hỗ trợ lưu video demo
 
----
 
-### Công nghệ sử dụng (Technologies)
+## Công nghệ sử dụng (Technologies)
 
 - Python
 - OpenCV
@@ -35,73 +36,47 @@ Hệ thống nhận diện ngôn ngữ ký hiệu tay theo thời gian thực s�
 - Scikit-learn
 - Numpy, Pandas
 
----
 
-### Cấu trúc project (Project Structure)
+## Cấu trúc project (Project Structure)
 
+```text
 D:.
 │   hand_landmaker.task
 │   README.md
 │
-\---data
+├───data
 │   │   data.csv
 │   │   X_test.pkl
 │   │   X_train.pkl
 │   │   y_test.pkl
 │   │   y_train.pkl
-│   \---images
+│   └───images
 │       ├───A
 │       ├───B
-│       ├───C
-│       ├───D
-│       ├───E
-│       ├───F
-│       ├───G
-│       ├───H
-│       ├───I
-│       ├───K
-│       ├───L
-│       ├───M
-│       ├───N
-│       ├───O
-│       ├───P
-│       ├───Q
-│       ├───R
-│       ├───S
-│       ├───T
-│       ├───U
-│       ├───V
-│       ├───W
-│       ├───X
-│       └───Y
-+---demo
+│       └───... (các thư mục khác)
+├───demo
 │       knn_demo.avi
 │       rf_demo.avi
 │       svm_demo.avi
-│
-+---models
+├───models
 │       model_knn.pkl
 │       model_rf.pkl
 │       model_svm.pkl
 │       scaler.pkl
-│
-+---src
+├───src
 │       collect_data.ipynb
 │       model_knn.ipynb
 │       model_rf.ipynb
 │       model_svm.ipynb
 │       preprocess.ipynb
 │       test_model.ipynb
-│
-\---utils
+└───utils
     │   features.py
-    │
-    \---__pycache__
+    └───pycache
             features.cpython-314.pyc
+```
 
----
-
-### Cách hoạt động (How It Works)
+## Cách hoạt động (How It Works)
 
 1. Thu thập dữ liệu từ camera (collect_data.ipynb)
 2. Trích xuất 21 điểm đặc trưng của bàn tay bằng MediaPipe (collect_data.ipynb)
@@ -109,25 +84,22 @@ D:.
 4. Huấn luyện các mô hình học máy (model_knn.ipynb, model_rf.ipynb, model_svm.ipynb)
 5. Dự đoán ký tự theo thời gian thực (test_model.ipynb)
 
----
 
-### Các mô hình sử dụng (Models)
+## Các mô hình sử dụng (Models)
 
 - KNN: Đơn giản, dễ triển khai
 - SVM: Độ chính xác cao
 - Random Forest: Ổn định, ít bị nhiễu
 
----
 
-### Hạn chế ()
+## Hạn chế (Limitations)
 
 - Không nhận diện được các ký tự động (J, Z)
 - Độ chính xác phụ thuộc nhiều vào góc quay, hướng bàn tay
 - Chỉ hỗ trợ 1 bàn tay
 
----
 
-### Hướng phát triển thêm (Future Improvements)
+## Hướng phát triển thêm (Future Improvements)
 
 - Hỗ trợ nhận diện ký tự động 
 - Tăng độ chính xác bằng dữ liệu đa dạng hơn
